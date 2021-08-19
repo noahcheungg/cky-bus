@@ -162,6 +162,7 @@ class Stop {
 // main code
 let stopNum1 = 0;
 let stopNum2 = 1;
+let stopNum3 = 2;
 
 setInterval(function() {
     let stop1 = new Stop(defaultStops[stopNum1].id);
@@ -182,5 +183,15 @@ setInterval(function() {
         // update title and subtitle
         $(`#destination2`).html(defaultStops[stopNum2].description);
         $(`#bound2`).html(defaultStops[stopNum2].bound);
+    });
+
+    let stop3 = new Stop(defaultStops[stopNum3].id);
+    stop3.getEta()
+    .then(() => stop3.processEta())
+    .then(() => stop3.updateInfo(3))
+    .then(() => {
+        // update title and subtitle
+        $(`#destination3`).html(defaultStops[stopNum3].description);
+        $(`#bound3`).html(defaultStops[stopNum3].bound);
     });
 }, 1000);
