@@ -1,8 +1,8 @@
-# cky-bus
+# wks-bus
 Quick website to allow myself to check bus times easier. Feel free to use it :)
 
 ## Demo
-https://noahcheungg.github.io/cky-bus/
+https://noahcheungg.github.io/wks-bus/
 
 ## To-do list
 - [x] Basic ETA query at specific locations (school)
