@@ -4,7 +4,7 @@ const defaultStops = [
     // 40X
     {
         'id': '9AD30F8EDBC3F139',
-        'description': 'Kwai Chung Estate',
+        'description': 'Kwai Chung Estate t',
         'bound': 'Outbound'
     },
     // 89D
