@@ -13,26 +13,28 @@ const defaultStops = [
         'description': 'City',
         'bound': 'City'
     },
-    // 81 to school, Kowloon bound
+    // 89S
     {
-        'id': '',
-        'description': 'Mei Tao House',
-        'bound': 'Kowloon'
+        'id': '7D54FE486D057070',
+        'description': 'City',
+        'bound': 'City'
+    },
+    // 99
+    {
+        'id': '0CB1F7979192FBB2',
+        'description': 'Rural',
+        'bound': 'Rural'
     },
     {
-        'id': '',
-        'description': 'Chik Fai Street',
-        'bound': 'Kowloon'
+        'id': '91CD1740B6AC752B',
+        'description': 'City',
+        'bound': 'City'
     },
+    //A41P
     {
-        'id': '',
-        'description': 'Mei Lam Estate',
-        'bound': 'Kowloon'
-    },
-    {
-        'id': '',
-        'description': 'Chung Ling Road',
-        'bound': 'Kowloon'
+        'id': 'BA72214DFE48AA86',
+        'description': 'City',
+        'bound': 'City'
     },
     {
         'id': '',
