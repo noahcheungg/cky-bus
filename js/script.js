@@ -4,14 +4,14 @@ const defaultStops = [
     // 40X
     {
         'id': '9AD30F8EDBC3F139',
-        'description': 'Kwai Chung Estate t',
-        'bound': 'Outbound'
+        'description': 'City',
+        'bound': 'City'
     },
     // 89D
     {
         'id': '541FF05FA053F2B5',
-        'description': 'Lam Tin Station',
-        'bound': 'Outbound'
+        'description': 'City',
+        'bound': 'City'
     },
     // 81 to school, Kowloon bound
     {
