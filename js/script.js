@@ -1,68 +1,68 @@
 const baseURL = "https://data.etabus.gov.hk/";
 const defaultStops = [
-    // school
     // 40X
     {
         'id': '9AD30F8EDBC3F139',
-        'description': 'City',
-        'bound': 'City'
+        'description': 'Wu Kai Sha Station',
+        'bound': 'Westbound'
     },
     // 89D
     {
         'id': '541FF05FA053F2B5',
-        'description': 'City',
-        'bound': 'City'
+        'description': 'Wu Kai Sha Station',
+        'bound': 'Westbound'
     },
     // 89S
     {
         'id': '7D54FE486D057070',
-        'description': 'City',
-        'bound': 'City'
+        'description': 'Wu Kai Sha Station',
+        'bound': 'Westbound'
     },
     // 99
     {
         'id': '0CB1F7979192FBB2',
-        'description': 'Rural',
-        'bound': 'Rural'
+        'description': 'Wu Kai Sha Station',
+        'bound': 'Eastbound'
     },
     {
         'id': '91CD1740B6AC752B',
-        'description': 'City',
-        'bound': 'City'
+        'description': 'Wu Kai Sha Station',
+        'bound': 'Westbound'
     },
     //A41P
     {
         'id': 'BA72214DFE48AA86',
-        'description': 'City',
-        'bound': 'City'
+        'description': 'Wu Kai Sha Station',
+        'bound': 'Westbound'
     },
-    {
-        'id': '',
-        'description': 'Sha Tin Heights Road',
-        'bound': 'Kowloon'
-    },
-    // 72 to school, Kowloon bound
-    {
-        'id': '',
-        'description': 'Royal Park Hotel',
-        'bound': 'Kowloon'
-    },
-    {
-        'id': '',
-        'description': 'Sha Tin Town Centre',
-        'bound': 'Kowloon'
-    },
-    // 81 to school, Sha Tin bound
-    {
-        'id': '',
-        'description': 'Prince Edward Station',
-        'bound': 'Sha Tin'
-    },
-    {
-        'id': '',
-        'description': '',
-        'bound': 'Sha Tin'
-    },
+    // // XX
+    // {
+    //     'id': '',
+    //     'description': 'Sha Tin Heights Road',
+    //     'bound': 'Kowloon'
+    // },
+    // // 72 to school, Kowloon bound
+    // {
+    //     'id': '',
+    //     'description': 'Royal Park Hotel',
+    //     'bound': 'Kowloon'
+    // },
+    // {
+    //     'id': '',
+    //     'description': 'Sha Tin Town Centre',
+    //     'bound': 'Kowloon'
+    // },
+    // // 81 to school, Sha Tin bound
+    // {
+    //     'id': '',
+    //     'description': 'Prince Edward Station',
+    //     'bound': 'Sha Tin'
+    // },
+    // {
+    //     'id': '',
+    //     'description': '',
+    //     'bound': 'Sha Tin'
+    // },
     // 81 
     {
         'id': '11B2034DDF30617A',
