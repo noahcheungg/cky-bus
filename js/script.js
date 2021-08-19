@@ -1,15 +1,17 @@
 const baseURL = "https://data.etabus.gov.hk/";
 const defaultStops = [
     // school
+    // 40X
     {
-        'id': '937C2A421F2E7D11',
-        'description': 'Caldecott Road',
-        'bound': 'Kowloon'
+        'id': '9AD30F8EDBC3F139',
+        'description': 'Kwai Chung Estate',
+        'bound': 'Outbound'
     },
+    // 89D
     {
-        'id': '24D77D8722934A82',
-        'description': 'Caldecott Road',
-        'bound': 'Sha Tin'
+        'id': '541FF05FA053F2B5',
+        'description': 'Lam Tin Station',
+        'bound': 'Outbound'
     },
     // 81 to school, Kowloon bound
     {
