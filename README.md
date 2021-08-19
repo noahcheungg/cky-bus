@@ -2,7 +2,7 @@
 Quick website to allow myself to check bus times easier. Feel free to use it :)
 
 ## Demo
-https://cathaypacific8747.github.io/cky-bus/
+https://noahcheungg.github.io/cky-bus/
 
 ## To-do list
 - [x] Basic ETA query at specific locations (school)
