@@ -34,45 +34,6 @@ const defaultStops = [
         'id': 'BA72214DFE48AA86',
         'description': 'Wu Kai Sha Station',
         'bound': 'Westbound'
-    },
-    // // XX
-    // {
-    //     'id': '',
-    //     'description': 'Sha Tin Heights Road',
-    //     'bound': 'Kowloon'
-    // },
-    // // 72 to school, Kowloon bound
-    // {
-    //     'id': '',
-    //     'description': 'Royal Park Hotel',
-    //     'bound': 'Kowloon'
-    // },
-    // {
-    //     'id': '',
-    //     'description': 'Sha Tin Town Centre',
-    //     'bound': 'Kowloon'
-    // },
-    // // 81 to school, Sha Tin bound
-    // {
-    //     'id': '',
-    //     'description': 'Prince Edward Station',
-    //     'bound': 'Sha Tin'
-    // },
-    // {
-    //     'id': '',
-    //     'description': '',
-    //     'bound': 'Sha Tin'
-    // },
-    // 81 
-    {
-        'id': '11B2034DDF30617A',
-        'description': 'Hung Hom Cross Harbour Tunnel Toll Plaza',
-        'bound': '[DEBUG] Kowloon'
-    },
-    {
-        'id': '4D3CBBDB95447F2E',
-        'description': 'Hung Hom Cross Harbour Tunnel Toll Plaza',
-        'bound': '[DEBUG] Hong Kong'
     }
 ]
 
@@ -134,8 +95,14 @@ class Stop {
             let eta = new Eta()
             eta.setGeneratedTime(this.response.generated_timestamp)
             eta.fromStopEta(data)
+            if (eta.route.destination_en.includes('WU KAI SHA')) continue;
             this.etas.push(eta)
         }
+        this.etas.sort((a, b) => a.eta - b.eta)
+        return this;
+    }
+
+    sortEta() {
         this.etas.sort((a, b) => a.eta - b.eta)
         return this;
     }
@@ -155,43 +122,36 @@ class Stop {
             }
         }
         $(`#table${tblNum}`).html(html);
-        $(`#generated${tblNum}`).html(strftime('%H:%M:%S', new Date(this.response.generated_timestamp)))
+        $(`#generated${tblNum}`).html(strftime('%H:%M:%S', new Date()))
     }
 }
 
 // main code
-let stopNum1 = 0;
-let stopNum2 = 1;
-let stopNum3 = 2;
 
-setInterval(function() {
-    let stop1 = new Stop(defaultStops[stopNum1].id);
-    stop1.getEta()
-    .then(() => stop1.processEta())
-    .then(() => stop1.updateInfo(1))
-    .then(() => {
+function updateTimes() {
+    Promise.all(
+        defaultStops.map(stop => {
+            let thisStop = new Stop(stop.id);
+    
+            return thisStop.getEta()
+            .then(() => thisStop.processEta());
+        })
+    ).then(stops => {
+        // all requests are done
+        let allEtas = [];
+        stops.map(stop => stop.etas.map(eta => {
+            allEtas.push(eta)
+        }))
+        let newStop = new Stop('all');
+        newStop.etas = allEtas;
+        newStop.sortEta();
+        newStop.updateInfo(1);
+    }).then(() => {
         // update title and subtitle
-        $(`#destination1`).html(defaultStops[stopNum1].description);
-        $(`#bound1`).html(defaultStops[stopNum1].bound);
-    });
+        $(`#destination1`).html("Wu Kai Sha Station");
+        $(`#bound1`).html("All bounds");
+    })
+}
 
-    let stop2 = new Stop(defaultStops[stopNum2].id);
-    stop2.getEta()
-    .then(() => stop2.processEta())
-    .then(() => stop2.updateInfo(2))
-    .then(() => {
-        // update title and subtitle
-        $(`#destination2`).html(defaultStops[stopNum2].description);
-        $(`#bound2`).html(defaultStops[stopNum2].bound);
-    });
-
-    let stop3 = new Stop(defaultStops[stopNum3].id);
-    stop3.getEta()
-    .then(() => stop3.processEta())
-    .then(() => stop3.updateInfo(3))
-    .then(() => {
-        // update title and subtitle
-        $(`#destination3`).html(defaultStops[stopNum3].description);
-        $(`#bound3`).html(defaultStops[stopNum3].bound);
-    });
-}, 1000);
+updateTimes();
+setInterval(updateTimes, 5000);
